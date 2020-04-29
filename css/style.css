@@ -1,0 +1,23 @@
+td {
+    max-width: 256px;
+    max-height: 256px;
+    background-color:#DDD;
+    border: 3px solid #000000;
+    text-align: center;
+    margin: 0px;
+    padding: 3px;
+    visibility: hidden;
+    vertical-align: top;
+}
+#td00 {
+    visibility: visible;
+}
+#Canvas00 {
+    background-image: url("/imgs/thoth/back.JPG");
+}
+div {
+    vertical-align: top;
+}
+canvas {
+    vertical-align: top;
+}

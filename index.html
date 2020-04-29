@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol Spread</title>
+    <script src="/js/getuser.js"></script>
+    <script src="/js/getUserSymbol.js"></script>
+    <script src="/js/construct.js"></script>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/canvasR0.css">
+    <link rel="stylesheet" href="/css/canvasR1.css">
+    <link rel="stylesheet" href="/css/canvasR2.css">
+    <link rel="stylesheet" href="/css/canvasR3.css">
+    <link rel="stylesheet" href="/css/canvasR4.css">
+    <link rel="stylesheet" href="/css/canvasR5.css">
+    <link rel="stylesheet" href="/css/canvasR6.css">
+    <link rel="stylesheet" href="/css/canvasR7.css">
+    <link rel="stylesheet" href="/css/canvasR8.css">
+    <link rel="stylesheet" href="/css/canvasR9.css">
+    <meta name="User">
+</head>
+
+<body onload="includeUser()">
+    <h1>Symbol Spread App</h1>
+    <div id="center">
+        <form>
+            <select id="spread" name="spread" onchange="SetSpread()">
+                <option value="Single">Single Symbol</option>
+                <option value="PPF">Past, Present, Future</option>
+                <option value="RHoE">Right Hand of Eris</option>
+                <option value="3Symbol">Three Symbol</option>
+                <option value="4Symbol">Four Symbol</option>
+                <option value="4Ele">Four Element</option>
+                <option value="Ema4Ele">The Emanation Four Element</option>
+                <option value="WTree">The World Tree</option>
+                <option value="THammer">Thor's Hammer</option>
+                <option value="NorseSpread">Norse Spread</option>
+                <option value="ShamanSpread">Shaman Spread</option>
+                <option value="3Life">Three Lifetimes</option>
+                <option value="4Quarters">Four Quarters</option>
+                <option value="CCross">Celtic Cross</option>
+            </select>
+            <select id="symbol" name="symbol" onchange="SetSpread()">
+                <option value="Crowley">Crowley Thoth Deck</option>
+                <option value="Futhark">Futhark Rune Set</option>
+            </select>
+            <input class="MajorArc" type="checkbox" id="MajorArc" name="MajorArc" value="MajorArc">
+            <label class="MajorArc" for="MajorArc">Major Arcana Only?</label><br>
+        </form>
+    </div>
+    <table>
+        <tr>
+            <td id="td00">
+                <div id="Tspan00"></div><canvas onclick="FlipSymbol('00')" id="Canvas00" width="184" height="184"></canvas>
+                <div id="Bspan00"></div>
+            </td>
+            <td id="td01">
+                <div id="Tspan01"></div><canvas onclick="FlipSymbol('01')" id="Canvas01" width="184" height="184"></canvas>
+                <div id="Bspan01"></div>
+            </td>
+            <td id="td02">
+                <div id="Tspan02"></div><canvas onclick="FlipSymbol('02')" id="Canvas02" width="184" height="184"></canvas>
+                <div id="Bspan02"></div>
+            </td>
+            <td id="td03">
+                <div id="Tspan03"></div><canvas onclick="FlipSymbol('03')" id="Canvas03" width="184" height="184"></canvas>
+                <div id="Bspan03"></div>
+            </td>
+            <td id="td04">
+                <div id="Tspan04"></div><canvas onclick="FlipSymbol('04')" id="Canvas04" width="184" height="184"></canvas>
+                <div id="Bspan04"></div>
+            </td>
+            <td id="td05">
+                <div id="Tspan05"></div><canvas onclick="FlipSymbol('05')" id="Canvas05" width="184" height="184"></canvas>
+                <div id="Bspan05"></div>
+            </td>
+            <td id="td06">
+                <div id="Tspan06"></div><canvas onclick="FlipSymbol('06')" id="Canvas06" width="184" height="184"></canvas>
+                <div id="Bspan06"></div>
+            </td>
+            <td id="td07">
+                <div id="Tspan07"></div><canvas onclick="FlipSymbol('07')" id="Canvas07" width="184" height="184"></canvas>
+                <div id="Bspan07"></div>
+            </td>
+            <td id="td08">
+                <div id="Tspan08"></div><canvas onclick="FlipSymbol('08')" id="Canvas08" width="184" height="184"></canvas>
+                <div id="Bspan08"></div>
+            </td>
+            <td id="td09">
+                <div id="Tspan09"></div><canvas onclick="FlipSymbol('09')" id="Canvas09" width="184" height="184"></canvas>
+                <div id="Bspan09"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td10">
+                <div id="Tspan10"></div><canvas onclick="FlipSymbol('10')" id="Canvas10" width="184" height="184"></canvas>
+                <div id="Bspan10"></div>
+            </td>
+            <td id="td11">
+                <div id="Tspan11"></div><canvas onclick="FlipSymbol('11')" id="Canvas11" width="184" height="184"></canvas>
+                <div id="Bspan11"></div>
+            </td>
+            <td id="td12">
+                <div id="Tspan12"></div><canvas onclick="FlipSymbol('12')" id="Canvas12" width="184" height="184"></canvas>
+                <div id="Bspan12"></div>
+            </td>
+            <td id="td13">
+                <div id="Tspan13"></div><canvas onclick="FlipSymbol('13')" id="Canvas13" width="184" height="184"></canvas>
+                <div id="Bspan13"></div>
+            </td>
+            <td id="td14">
+                <div id="Tspan14"></div><canvas onclick="FlipSymbol('14')" id="Canvas14" width="184" height="184"></canvas>
+                <div id="Bspan14"></div>
+            </td>
+            <td id="td15">
+                <div id="Tspan15"></div><canvas onclick="FlipSymbol('15')" id="Canvas15" width="184" height="184"></canvas>
+                <div id="Bspan15"></div>
+            </td>
+            <td id="td16">
+                <div id="Tspan16"></div><canvas onclick="FlipSymbol('16')" id="Canvas16" width="184" height="184"></canvas>
+                <div id="Bspan16"></div>
+            </td>
+            <td id="td17">
+                <div id="Tspan17"></div><canvas onclick="FlipSymbol('17')" id="Canvas17" width="184" height="184"></canvas>
+                <div id="Bspan17"></div>
+            </td>
+            <td id="td18">
+                <div id="Tspan18"></div><canvas onclick="FlipSymbol('18')" id="Canvas18" width="184" height="184"></canvas>
+                <div id="Bspan18"></div>
+            </td>
+            <td id="td19">
+                <div id="Tspan19"></div><canvas onclick="FlipSymbol('19')" id="Canvas19" width="184" height="184"></canvas>
+                <div id="Bspan19"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td20">
+                <div id="Tspan20"></div><canvas onclick="FlipSymbol('20')" id="Canvas20" width="184" height="184"></canvas>
+                <div id="Bspan20"></div>
+            </td>
+            <td id="td21">
+                <div id="Tspan21"></div><canvas onclick="FlipSymbol('21')" id="Canvas21" width="184" height="184"></canvas>
+                <div id="Bspan21"></div>
+            </td>
+            <td id="td22">
+                <div id="Tspan22"></div><canvas onclick="FlipSymbol('22')" id="Canvas22" width="184" height="184"></canvas>
+                <div id="Bspan22"></div>
+            </td>
+            <td id="td23">
+                <div id="Tspan23"></div><canvas onclick="FlipSymbol('23')" id="Canvas23" width="184" height="184"></canvas>
+                <div id="Bspan23"></div>
+            </td>
+            <td id="td24">
+                <div id="Tspan24"></div><canvas onclick="FlipSymbol('24')" id="Canvas24" width="184" height="184"></canvas>
+                <div id="Bspan24"></div>
+            </td>
+            <td id="td25">
+                <div id="Tspan25"></div><canvas onclick="FlipSymbol('25')" id="Canvas25" width="184" height="184"></canvas>
+                <div id="Bspan25"></div>
+            </td>
+            <td id="td26">
+                <div id="Tspan26"></div><canvas onclick="FlipSymbol('26')" id="Canvas26" width="184" height="184"></canvas>
+                <div id="Bspan26"></div>
+            </td>
+            <td id="td27">
+                <div id="Tspan27"></div><canvas onclick="FlipSymbol('27')" id="Canvas27" width="184" height="184"></canvas>
+                <div id="Bspan27"></div>
+            </td>
+            <td id="td28">
+                <div id="Tspan28"></div><canvas onclick="FlipSymbol('28')" id="Canvas28" width="184" height="184"></canvas>
+                <div id="Bspan28"></div>
+            </td>
+            <td id="td29">
+                <div id="Tspan29"></div><canvas onclick="FlipSymbol('29')" id="Canvas29" width="184" height="184"></canvas>
+                <div id="Bspan29"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td30">
+                <div id="Tspan30"></div><canvas onclick="FlipSymbol('30')" id="Canvas30" width="184" height="184"></canvas>
+                <div id="Bspan30"></div>
+            </td>
+            <td id="td31">
+                <div id="Tspan31"></div><canvas onclick="FlipSymbol('31')" id="Canvas31" width="184" height="184"></canvas>
+                <div id="Bspan31"></div>
+            </td>
+            <td id="td32">
+                <div id="Tspan32"></div><canvas onclick="FlipSymbol('32')" id="Canvas32" width="184" height="184"></canvas>
+                <div id="Bspan32"></div>
+            </td>
+            <td id="td33">
+                <div id="Tspan33"></div><canvas onclick="FlipSymbol('33')" id="Canvas33" width="184" height="184"></canvas>
+                <div id="Bspan33"></div>
+            </td>
+            <td id="td34">
+                <div id="Tspan34"></div><canvas onclick="FlipSymbol('34')" id="Canvas34" width="184" height="184"></canvas>
+                <div id="Bspan34"></div>
+            </td>
+            <td id="td35">
+                <div id="Tspan35"></div><canvas onclick="FlipSymbol('35')" id="Canvas35" width="184" height="184"></canvas>
+                <div id="Bspan35"></div>
+            </td>
+            <td id="td36">
+                <div id="Tspan36"></div><canvas onclick="FlipSymbol('36')" id="Canvas36" width="184" height="184"></canvas>
+                <div id="Bspan36"></div>
+            </td>
+            <td id="td37">
+                <div id="Tspan37"></div><canvas onclick="FlipSymbol('37')" id="Canvas37" width="184" height="184"></canvas>
+                <div id="Bspan37"></div>
+            </td>
+            <td id="td38">
+                <div id="Tspan38"></div><canvas onclick="FlipSymbol('38')" id="Canvas38" width="184" height="184"></canvas>
+                <div id="Bspan38"></div>
+            </td>
+            <td id="td39">
+                <div id="Tspan39"></div><canvas onclick="FlipSymbol('39')" id="Canvas39" width="184" height="184"></canvas>
+                <div id="Bspan39"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td40">
+                <div id="Tspan40"></div><canvas onclick="FlipSymbol('40')" id="Canvas40" width="184" height="184"></canvas>
+                <div id="Bspan40"></div>
+            </td>
+            <td id="td41">
+                <div id="Tspan41"></div><canvas onclick="FlipSymbol('41')" id="Canvas41" width="184" height="184"></canvas>
+                <div id="Bspan41"></div>
+            </td>
+            <td id="td42">
+                <div id="Tspan42"></div><canvas onclick="FlipSymbol('42')" id="Canvas42" width="184" height="184"></canvas>
+                <div id="Bspan42"></div>
+            </td>
+            <td id="td43">
+                <div id="Tspan43"></div><canvas onclick="FlipSymbol('43')" id="Canvas43" width="184" height="184"></canvas>
+                <div id="Bspan43"></div>
+            </td>
+            <td id="td44">
+                <div id="Tspan44"></div><canvas onclick="FlipSymbol('44')" id="Canvas44" width="184" height="184"></canvas>
+                <div id="Bspan44"></div>
+            </td>
+            <td id="td45">
+                <div id="Tspan45"></div><canvas onclick="FlipSymbol('45')" id="Canvas45" width="184" height="184"></canvas>
+                <div id="Bspan45"></div>
+            </td>
+            <td id="td46">
+                <div id="Tspan46"></div><canvas onclick="FlipSymbol('46')" id="Canvas46" width="184" height="184"></canvas>
+                <div id="Bspan46"></div>
+            </td>
+            <td id="td47">
+                <div id="Tspan47"></div><canvas onclick="FlipSymbol('47')" id="Canvas47" width="184" height="184"></canvas>
+                <div id="Bspan47"></div>
+            </td>
+            <td id="td48">
+                <div id="Tspan48"></div><canvas onclick="FlipSymbol('48')" id="Canvas48" width="184" height="184"></canvas>
+                <div id="Bspan48"></div>
+            </td>
+            <td id="td49">
+                <div id="Tspan49"></div><canvas onclick="FlipSymbol('49')" id="Canvas49" width="184" height="184"></canvas>
+                <div id="Bspan49"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td50">
+                <div id="Tspan50"></div><canvas onclick="FlipSymbol('50')" id="Canvas50" width="184" height="184"></canvas>
+                <div id="Bspan50"></div>
+            </td>
+            <td id="td51">
+                <div id="Tspan51"></div><canvas onclick="FlipSymbol('51')" id="Canvas51" width="184" height="184"></canvas>
+                <div id="Bspan51"></div>
+            </td>
+            <td id="td52">
+                <div id="Tspan52"></div><canvas onclick="FlipSymbol('52')" id="Canvas52" width="184" height="184"></canvas>
+                <div id="Bspan52"></div>
+            </td>
+            <td id="td53">
+                <div id="Tspan53"></div><canvas onclick="FlipSymbol('53')" id="Canvas53" width="184" height="184"></canvas>
+                <div id="Bspan53"></div>
+            </td>
+            <td id="td54">
+                <div id="Tspan54"></div><canvas onclick="FlipSymbol('54')" id="Canvas54" width="184" height="184"></canvas>
+                <div id="Bspan54"></div>
+            </td>
+            <td id="td55">
+                <div id="Tspan55"></div><canvas onclick="FlipSymbol('55')" id="Canvas55" width="184" height="184"></canvas>
+                <div id="Bspan55"></div>
+            </td>
+            <td id="td56">
+                <div id="Tspan56"></div><canvas onclick="FlipSymbol('56')" id="Canvas56" width="184" height="184"></canvas>
+                <div id="Bspan56"></div>
+            </td>
+            <td id="td57">
+                <div id="Tspan57"></div><canvas onclick="FlipSymbol('57')" id="Canvas57" width="184" height="184"></canvas>
+                <div id="Bspan57"></div>
+            </td>
+            <td id="td58">
+                <div id="Tspan58"></div><canvas onclick="FlipSymbol('58')" id="Canvas58" width="184" height="184"></canvas>
+                <div id="Bspan58"></div>
+            </td>
+            <td id="td59">
+                <div id="Tspan59"></div><canvas onclick="FlipSymbol('59')" id="Canvas59" width="184" height="184"></canvas>
+                <div id="Bspan59"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td60">
+                <div id="Tspan60"></div><canvas onclick="FlipSymbol('60')" id="Canvas60" width="184" height="184"></canvas>
+                <div id="Bspan60"></div>
+            </td>
+            <td id="td61">
+                <div id="Tspan61"></div><canvas onclick="FlipSymbol('61')" id="Canvas61" width="184" height="184"></canvas>
+                <div id="Bspan61"></div>
+            </td>
+            <td id="td62">
+                <div id="Tspan62"></div><canvas onclick="FlipSymbol('62')" id="Canvas62" width="184" height="184"></canvas>
+                <div id="Bspan62"></div>
+            </td>
+            <td id="td63">
+                <div id="Tspan63"></div><canvas onclick="FlipSymbol('63')" id="Canvas63" width="184" height="184"></canvas>
+                <div id="Bspan63"></div>
+            </td>
+            <td id="td64">
+                <div id="Tspan64"></div><canvas onclick="FlipSymbol('64')" id="Canvas64" width="184" height="184"></canvas>
+                <div id="Bspan64"></div>
+            </td>
+            <td id="td65">
+                <div id="Tspan65"></div><canvas onclick="FlipSymbol('65')" id="Canvas65" width="184" height="184"></canvas>
+                <div id="Bspan65"></div>
+            </td>
+            <td id="td66">
+                <div id="Tspan66"></div><canvas onclick="FlipSymbol('66')" id="Canvas66" width="184" height="184"></canvas>
+                <div id="Bspan66"></div>
+            </td>
+            <td id="td67">
+                <div id="Tspan67"></div><canvas onclick="FlipSymbol('67')" id="Canvas67" width="184" height="184"></canvas>
+                <div id="Bspan67"></div>
+            </td>
+            <td id="td68">
+                <div id="Tspan68"></div><canvas onclick="FlipSymbol('68')" id="Canvas68" width="184" height="184"></canvas>
+                <div id="Bspan68"></div>
+            </td>
+            <td id="td69">
+                <div id="Tspan69"></div><canvas onclick="FlipSymbol('69')" id="Canvas69" width="184" height="184"></canvas>
+                <div id="Bspan69"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td70">
+                <div id="Tspan70"></div><canvas onclick="FlipSymbol('70')" id="Canvas70" width="184" height="184"></canvas>
+                <div id="Bspan70"></div>
+            </td>
+            <td id="td71">
+                <div id="Tspan71"></div><canvas onclick="FlipSymbol('71')" id="Canvas71" width="184" height="184"></canvas>
+                <div id="Bspan71"></div>
+            </td>
+            <td id="td72">
+                <div id="Tspan72"></div><canvas onclick="FlipSymbol('72')" id="Canvas72" width="184" height="184"></canvas>
+                <div id="Bspan72"></div>
+            </td>
+            <td id="td73">
+                <div id="Tspan73"></div><canvas onclick="FlipSymbol('73')" id="Canvas73" width="184" height="184"></canvas>
+                <div id="Bspan73"></div>
+            </td>
+            <td id="td74">
+                <div id="Tspan74"></div><canvas onclick="FlipSymbol('74')" id="Canvas74" width="184" height="184"></canvas>
+                <div id="Bspan74"></div>
+            </td>
+            <td id="td75">
+                <div id="Tspan75"></div><canvas onclick="FlipSymbol('75')" id="Canvas75" width="184" height="184"></canvas>
+                <div id="Bspan75"></div>
+            </td>
+            <td id="td76">
+                <div id="Tspan76"></div><canvas onclick="FlipSymbol('76')" id="Canvas76" width="184" height="184"></canvas>
+                <div id="Bspan76"></div>
+            </td>
+            <td id="td77">
+                <div id="Tspan77"></div><canvas onclick="FlipSymbol('77')" id="Canvas77" width="184" height="184"></canvas>
+                <div id="Bspan77"></div>
+            </td>
+            <td id="td78">
+                <div id="Tspan78"></div><canvas onclick="FlipSymbol('78')" id="Canvas78" width="184" height="184"></canvas>
+                <div id="Bspan78"></div>
+            </td>
+            <td id="td79">
+                <div id="Tspan79"></div><canvas onclick="FlipSymbol('79')" id="Canvas79" width="184" height="184"></canvas>
+                <div id="Bspan79"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td80">
+                <div id="Tspan80"></div><canvas onclick="FlipSymbol('80')" id="Canvas80" width="184" height="184"></canvas>
+                <div id="Bspan80"></div>
+            </td>
+            <td id="td81">
+                <div id="Tspan81"></div><canvas onclick="FlipSymbol('81')" id="Canvas81" width="184" height="184"></canvas>
+                <div id="Bspan81"></div>
+            </td>
+            <td id="td82">
+                <div id="Tspan82"></div><canvas onclick="FlipSymbol('82')" id="Canvas82" width="184" height="184"></canvas>
+                <div id="Bspan82"></div>
+            </td>
+            <td id="td83">
+                <div id="Tspan83"></div><canvas onclick="FlipSymbol('83')" id="Canvas83" width="184" height="184"></canvas>
+                <div id="Bspan83"></div>
+            </td>
+            <td id="td84">
+                <div id="Tspan84"></div><canvas onclick="FlipSymbol('84')" id="Canvas84" width="184" height="184"></canvas>
+                <div id="Bspan84"></div>
+            </td>
+            <td id="td85">
+                <div id="Tspan85"></div><canvas onclick="FlipSymbol('85')" id="Canvas85" width="184" height="184"></canvas>
+                <div id="Bspan85"></div>
+            </td>
+            <td id="td86">
+                <div id="Tspan86"></div><canvas onclick="FlipSymbol('86')" id="Canvas86" width="184" height="184"></canvas>
+                <div id="Bspan86"></div>
+            </td>
+            <td id="td87">
+                <div id="Tspan87"></div><canvas onclick="FlipSymbol('87')" id="Canvas87" width="184" height="184"></canvas>
+                <div id="Bspan87"></div>
+            </td>
+            <td id="td88">
+                <div id="Tspan88"></div><canvas onclick="FlipSymbol('88')" id="Canvas88" width="184" height="184"></canvas>
+                <div id="Bspan88"></div>
+            </td>
+            <td id="td89">
+                <div id="Tspan89"></div><canvas onclick="FlipSymbol('89')" id="Canvas89" width="184" height="184"></canvas>
+                <div id="Bspan89"></div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td90">
+                <div id="Tspan90"></div><canvas onclick="FlipSymbol('90')" id="Canvas90" width="184" height="184"></canvas>
+                <div id="Bspan90"></div>
+            </td>
+            <td id="td91">
+                <div id="Tspan91"></div><canvas onclick="FlipSymbol('91')" id="Canvas91" width="184" height="184"></canvas>
+                <div id="Bspan91"></div>
+            </td>
+            <td id="td92">
+                <div id="Tspan92"></div><canvas onclick="FlipSymbol('92')" id="Canvas92" width="184" height="184"></canvas>
+                <div id="Bspan92"></div>
+            </td>
+            <td id="td93">
+                <div id="Tspan93"></div><canvas onclick="FlipSymbol('93')" id="Canvas93" width="184" height="184"></canvas>
+                <div id="Bspan93"></div>
+            </td>
+            <td id="td94">
+                <div id="Tspan94"></div><canvas onclick="FlipSymbol('94')" id="Canvas94" width="184" height="184"></canvas>
+                <div id="Bspan94"></div>
+            </td>
+            <td id="td95">
+                <div id="Tspan95"></div><canvas onclick="FlipSymbol('95')" id="Canvas95" width="184" height="184"></canvas>
+                <div id="Bspan95"></div>
+            </td>
+            <td id="td96">
+                <div id="Tspan96"></div><canvas onclick="FlipSymbol('96')" id="Canvas96" width="184" height="184"></canvas>
+                <div id="Bspan96"></div>
+            </td>
+            <td id="td97">
+                <div id="Tspan97"></div><canvas onclick="FlipSymbol('97')" id="Canvas97" width="184" height="184"></canvas>
+                <div id="Bspan97"></div>
+            </td>
+            <td id="td98">
+                <div id="Tspan98"></div><canvas onclick="FlipSymbol('98')" id="Canvas98" width="184" height="184"></canvas>
+                <div id="Bspan98"></div>
+            </td>
+            <td id="td99">
+                <div id="Tspan99"></div><canvas onclick="FlipSymbol('99')" id="Canvas99" width="184" height="184"></canvas>
+                <div id="Bspan99"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
